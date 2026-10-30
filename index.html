@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hareram Sharma's personal portfolio website">
+  <meta name="description" content="Hareram Sharma - B.Tech CSE Student, Programmer and Web Developer">
+  <meta name="theme-color" content="#0b1120">
   <title>Hareram Sharma | Portfolio</title>
 
   <style>
-    /* ===== BASIC SETTINGS ===== */
     * {
       margin: 0;
       padding: 0;
@@ -68,7 +68,7 @@
       margin-bottom: 38px;
     }
 
-    /* ===== NAVIGATION ===== */
+    /* NAVIGATION */
     header {
       background: #0b1120;
       border-bottom: 1px solid var(--border);
@@ -119,7 +119,7 @@
       cursor: pointer;
     }
 
-    /* ===== HOME ===== */
+    /* HOME */
     .hero {
       min-height: 85vh;
       display: flex;
@@ -190,6 +190,7 @@
       background: transparent;
     }
 
+    /* PROFILE PHOTO - CIRCLE */
     .photo-area {
       display: flex;
       justify-content: center;
@@ -203,7 +204,7 @@
       border: 4px solid var(--accent);
       overflow: hidden;
       background: var(--card);
-      box-shadow: 0 0 35px rgba(56, 189, 248, 0.18);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -213,17 +214,23 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       display: block;
+      border-radius: 50%;
     }
 
     .photo-placeholder {
-      text-align: center;
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
       color: var(--accent);
       font-size: 65px;
       font-weight: bold;
     }
 
-    /* ===== ABOUT ===== */
+    /* ABOUT */
     .about-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -256,7 +263,7 @@
       margin-bottom: 5px;
     }
 
-    /* ===== SKILLS ===== */
+    /* SKILLS */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -291,7 +298,7 @@
       font-size: 14px;
     }
 
-    /* ===== PROJECTS ===== */
+    /* PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -331,7 +338,7 @@
       font-size: 12px;
     }
 
-    /* ===== CONTACT ===== */
+    /* CONTACT */
     .contact-card {
       max-width: 720px;
       margin: auto;
@@ -366,7 +373,7 @@
       color: var(--accent);
     }
 
-    /* ===== FOOTER AND BACK TO TOP ===== */
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
       text-align: center;
@@ -391,7 +398,7 @@
       cursor: pointer;
     }
 
-    /* ===== MOBILE RESPONSIVE ===== */
+    /* MOBILE */
     @media (max-width: 760px) {
       .menu-button {
         display: block;
@@ -482,12 +489,60 @@
         padding: 20px;
       }
     }
+
+    /* PRINT / SAVE PDF */
+    @media print {
+      header,
+      .buttons,
+      .social-links,
+      #backToTop,
+      .menu-button {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      .section,
+      .hero {
+        min-height: auto;
+        padding: 25px 0;
+        break-inside: avoid;
+      }
+
+      .about-card,
+      .skill-card,
+      .project-card,
+      .contact-card,
+      .detail {
+        background: white;
+        color: black;
+        border: 1px solid #ccc;
+      }
+
+      .section-subtitle,
+      .about-card p,
+      .project-card p,
+      .skill-card p,
+      .contact-card p,
+      footer {
+        color: #333;
+      }
+
+      .accent,
+      .section-title span,
+      .contact-email {
+        color: #111;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== NAVIGATION ===== -->
+  <!-- NAVIGATION -->
   <header>
     <div class="container navbar">
       <a class="brand" href="#home">HS.</a>
@@ -508,9 +563,10 @@
   </header>
 
   <main>
-    <!-- ===== HOME SECTION ===== -->
+    <!-- HOME -->
     <section class="hero" id="home">
       <div class="container hero-content">
+
         <div>
           <span class="hero-label">Welcome to my portfolio</span>
 
@@ -534,23 +590,24 @@
           </div>
         </div>
 
+        <!-- PROFILE PHOTO -->
         <div class="photo-area">
           <div class="photo-frame">
             <img
               id="profilePhoto"
-              src="ppp.jpg"
+              src="images/hareram.jpeg"
               alt="Hareram Sharma"
             >
-            <div class="photo-placeholder" id="photoPlaceholder"
-              style="display:none;">
+            <div class="photo-placeholder" id="photoPlaceholder">
               HS
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
+    <!-- ABOUT -->
     <section class="section" id="about">
       <div class="container">
         <h2 class="section-title">About <span>Me</span></h2>
@@ -599,7 +656,7 @@
       </div>
     </section>
 
-    <!-- ===== SKILLS SECTION ===== -->
+    <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="container">
         <h2 class="section-title">My <span>Skills</span></h2>
@@ -647,7 +704,7 @@
       </div>
     </section>
 
-    <!-- ===== PROJECTS SECTION ===== -->
+    <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container">
         <h2 class="section-title">My <span>Projects</span></h2>
@@ -683,7 +740,7 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
+    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
         <h2 class="section-title">Contact <span>Me</span></h2>
@@ -707,7 +764,7 @@
             </a>
 
             <a class="btn btn-outline"
-              href="https://www.linkedin.com/in/hareram-sharma-81225b206"
+              href=""
               target="_blank" rel="noopener noreferrer">
               LinkedIn Profile
             </a>
@@ -723,7 +780,7 @@
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer>
     <p>
       © <span id="currentYear"></span> Hareram Sharma.
@@ -734,17 +791,13 @@
   <button id="backToTop" type="button" aria-label="Back to top">↑</button>
 
   <script>
-    // Show initials if the profile photo is missing.
+    // PROFILE PHOTO FALLBACK
     const profilePhoto = document.getElementById("profilePhoto");
     const photoPlaceholder = document.getElementById("photoPlaceholder");
 
     function showPhotoFallback() {
       profilePhoto.style.display = "none";
       photoPlaceholder.style.display = "flex";
-      photoPlaceholder.style.alignItems = "center";
-      photoPlaceholder.style.justifyContent = "center";
-      photoPlaceholder.style.width = "100%";
-      photoPlaceholder.style.height = "100%";
     }
 
     profilePhoto.addEventListener("error", showPhotoFallback);
@@ -753,7 +806,7 @@
       showPhotoFallback();
     }
 
-    // Mobile navigation menu.
+    // MOBILE MENU
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
 
@@ -765,7 +818,6 @@
       menuButton.textContent = isOpen ? "✕" : "☰";
     });
 
-    // Close the mobile menu after selecting a section.
     document.querySelectorAll("#navLinks a").forEach(function (link) {
       link.addEventListener("click", function () {
         navLinks.classList.remove("open");
@@ -774,16 +826,16 @@
       });
     });
 
-    // Print the portfolio or save it as a PDF.
+    // PRINT / SAVE PDF
     document.getElementById("resumeButton").addEventListener("click", function () {
       window.print();
     });
 
-    // Automatically display the current year.
+    // CURRENT YEAR
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
 
-    // Show the back-to-top button after scrolling.
+    // BACK TO TOP
     const backToTop = document.getElementById("backToTop");
 
     window.addEventListener("scroll", function () {
@@ -797,60 +849,6 @@
       });
     });
   </script>
-
-  <style>
-    /* Print layout for saving a PDF */
-    @media print {
-      header,
-      .buttons,
-      .social-links,
-      #backToTop,
-      .menu-button {
-        display: none !important;
-      }
-
-      body {
-        background: white;
-        color: black;
-      }
-
-      .section,
-      .hero {
-        min-height: auto;
-        padding: 25px 0;
-        break-inside: avoid;
-      }
-
-      .about-card,
-      .skill-card,
-      .project-card,
-      .contact-card,
-      .detail {
-        background: white;
-        color: black;
-        border: 1px solid #ccc;
-      }
-
-      .section-subtitle,
-      .about-card p,
-      .project-card p,
-      .skill-card p,
-      .contact-card p,
-      footer {
-        color: #333;
-      }
-
-      .accent,
-      .section-title span,
-      .contact-email {
-        color: #111;
-      }
-
-      a {
-        text-decoration: none;
-      }
-    }
-  </style>
 
 </body>
 </html>
